@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\TypeEvaluationRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TypeEvaluationController extends Controller
 {
+    protected  $typeEvaluationRepository;
+
+    public function __construct(TypeEvaluationRepository $typeEvaluationRepository){
+        $this->typeEvaluationRepository = $typeEvaluationRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,8 @@ class TypeEvaluationController extends Controller
      */
     public function index()
     {
-        //
+        $typeEvaluations = $this->typeEvaluationRepository->getAll();
+        return view('typeEvaluation.index',compact('typeEvaluations'));
     }
 
     /**
@@ -23,7 +31,7 @@ class TypeEvaluationController extends Controller
      */
     public function create()
     {
-        //
+        return view('typeEvaluation.add');
     }
 
     /**
@@ -34,7 +42,18 @@ class TypeEvaluationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            //'title' => 'required|unique:posts|max:255',
+            'nom' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('typeEvaluation/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $typeEvaluation = $this->typeEvaluationRepository->store($request->all());
+        return redirect('type-evaluation');
     }
 
     /**
@@ -56,7 +75,8 @@ class TypeEvaluationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $typeEvaluation = $this->typeEvaluationRepository->getById($id);
+        return view('type-evaluation.edit',compact('typeEvaluation'));
     }
 
     /**
@@ -68,7 +88,18 @@ class TypeEvaluationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            //'title' => 'required|unique:posts|max:255',
+            'nom' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('type-evaluation/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $this->typeEvaluationRepository->update($id, $request->all());
+        return redirect('type-evaluation');
     }
 
     /**
@@ -79,6 +110,6 @@ class TypeEvaluationController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

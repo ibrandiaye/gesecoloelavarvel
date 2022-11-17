@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Evaluation extends Model
 {
     protected $fillable = [
-        'libelle','semestre_id','type_evaluation_id','classe_id','matiere_id'
+        'date','semestre_id','type_evaluation_id','classe_id','matiere_id'
     ];
     public function semestre(){
         return $this->belongsTo(Semestre::class);

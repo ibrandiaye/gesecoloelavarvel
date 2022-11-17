@@ -8,7 +8,12 @@
 
 namespace App\Repositories;
 
+use App\Semestre;
 
 class SemestreRepository extends RessourceRepository{
+    public function __construct(Semestre $semestre)
+    {
+        $this->model = $semestre;
+    }
 
 }

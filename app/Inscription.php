@@ -12,7 +12,7 @@ class Inscription extends Model
     public function anneeScolaire(){
         return $this->belongsTo(AnneeScolaire::class);
     }
-    public function Classe(){
+    public function classe(){
         return $this->belongsTo(Classe::class);
     }
     public function eleve(){

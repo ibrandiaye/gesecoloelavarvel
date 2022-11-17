@@ -20,4 +20,8 @@ class ClasseRepository extends RessourceRepository{
             ->orderBy('id','desc')
             ->get();
     }
+    public function getClasseByAnneeScolaire($annee_scolaire_id){
+        return Classe::where('annee_scolaire_id',$annee_scolaire_id)
+        ->get();
+    }
 }

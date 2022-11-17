@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 Route::resource('/anneescolaire', 'AnneeScolaireController');
 Route::resource('/tutteur', 'TutteurController');
 Route::resource('/eleve', 'EleveController');
@@ -30,3 +28,14 @@ Route::get('/getProgrammeByClasse/{id}', 'ProgrammeController@index')->name('hom
 Route::resource('/coefficient', 'CoefficientController');
 Route::resource('/planning', 'PlanningController');
 Route::resource('/cahier-texte', 'CahierTexteController');
+Route::resource('/semestre', 'SemestreController');
+Route::resource('/type-evaluation', 'TypeEvaluationController');
+Route::resource('/evaluation', 'EvaluationController');
+Route::resource('/note', 'NoteController');
+Route::resource('/paiement', 'PaiementController');
+Route::resource('/inscription','InscriptionController');
+Route::resource('/user','UserController');
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+

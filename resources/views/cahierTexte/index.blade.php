@@ -38,20 +38,20 @@
                                     <tbody>
                                     @foreach($cahierTextes as $cahierTexte)
                                         <tr>
-                                            <td>{{ $cahierTexte->contenu }}</td>
+                                            <td>{!! $cahierTexte->contenu !!}</td>
                                             <td>{{  $cahierTexte->planning->matiere->nom }}  </td>
                                             <td>{{$cahierTexte->planning->jour}}</td>
                                             <td>{{$cahierTexte->created_at}}</td>
-                                            <td>  <a href="{{ URL::to('cahierTexte/'.$cahierTexte->id.'/edit') }}" class="btn btn-icon btn-icon-circle btn-secondary btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-pencil"></i></span></a></td>
+                                            <td>  <a href="{{ URL::to('cahier-texte/'.$cahierTexte->id.'/edit') }}" class="btn btn-icon btn-icon-circle btn-secondary btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-pencil"></i></span></a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>
                                     <tfoot>
                                     <tr>
-                                        <th>nom</th>
-                                        <th>Année Scolaire</th>
-                                        <th>Niveau</th>
-                                        <th>Serie</th>
+                                        <th>Contenu</th>
+                                        <th>Cours</th>
+                                        <th>Jour</th>
+                                        <th>Date</th>
                                         <th>action</th>
                                     </tr>
                                     </tfoot>

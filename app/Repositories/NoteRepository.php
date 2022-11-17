@@ -8,6 +8,7 @@
 
 namespace App\Repositories;
 
+use App\Note;
 
 class NoteRepository extends RessourceRepository{
     public function __construct(Note $note){

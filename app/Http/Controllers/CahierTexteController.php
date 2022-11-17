@@ -53,7 +53,7 @@ class CahierTexteController extends Controller
     public function store(Request $request)
     {
         $cahierTexte = $this->cahierTexteRepository->store($request->all());
-        return redirect('cahierTexte');
+        return redirect('cahier-texte');
     }
 
     /**
@@ -76,10 +76,9 @@ class CahierTexteController extends Controller
     public function edit($id)
     {
         $cahierTexte = $this->cahierTexteRepository->getById($id);
-        $programmes = $this->programmeRepository->getAll();
         $plannings = $this->planningRepository->getAll();
         $classes = $this->classeRepository->getAll();
-        return view('cahierTexte.edit',compact('programmes','plannings','classes','cahierTexte'));
+        return view('cahierTexte.edit',compact('plannings','classes','cahierTexte'));
     }
 
     /**
@@ -92,7 +91,7 @@ class CahierTexteController extends Controller
     public function update(Request $request, $id)
     {
         $this->cahierTexteRepository->update($id,$request->all());
-        return redirect('cahierTexte');
+        return redirect('cahier-texte');
     }
 
     /**

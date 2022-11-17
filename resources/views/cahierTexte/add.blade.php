@@ -106,4 +106,9 @@
 @endsection
 @section('script')
     <script src="{{asset('dist/js/validation-data.js')}}"></script>
+    <!-- Tinymce JavaScript -->
+    <script src="{{ asset('vendors/tinymce/tinymce.min.js') }}"></script>
+
+    <!-- Tinymce Wysuhtml5 Init JavaScript -->
+    <script src="{{ asset('dist/js/tinymce-data.js') }}"></script>
 @endsection

@@ -20,7 +20,84 @@
         <!-- Row -->
         <div class="row">
             <div class="col-xl-12">
+                <div class="hk-row">
+                    @foreach ($classes as $classe)
 
+
+                                    <div class="col-sm-3">
+										<div class="card card-sm">
+											<div class="card-body">
+		 										<div class="d-flex justify-content-between mb-5">
+													<div>
+														<span class="d-block font-15 text-dark font-weight-500">{{ $classe->niveau->nom }}</span>
+													</div>
+													<div>
+														<span class="badge badge-primary  badge-sm">+10%</span>
+													</div>
+												</div>
+												<div>
+													<a href="{{ route('classe.show', ['classe'=>$classe->id]) }}"><span class="d-block display-5 text-dark mb-5">{{ $classe->nom }}</span></a>
+													<small class="d-block">172,458 Target Users</small>
+												</div>
+											</div>
+										</div>
+									</div>
+                                    @endforeach
+									{{--  <div class="col-sm-4">
+										<div class="card card-sm">
+											<div class="card-body">
+												<div class="d-flex justify-content-between mb-5">
+													<div>
+														<span class="d-block font-15 text-dark font-weight-500">Users</span>
+													</div>
+													<div>
+														<span class="badge badge-danger   badge-sm">+10%</span>
+													</div>
+												</div>
+												<div>
+													<span class="d-block display-5 text-dark mb-5">68M</span>
+													<small class="d-block">90M Targeted</small>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="card card-sm">
+											<div class="card-body">
+												<div class="d-flex justify-content-between mb-5">
+													<div>
+														<span class="d-block font-15 text-dark font-weight-500">Tickets</span>
+													</div>
+													<div>
+														<span class="badge badge-primary  badge-sm">-1.5%</span>
+													</div>
+												</div>
+												<div>
+													<span class="d-block display-5 text-dark mb-5">73</span>
+													<small class="d-block">100 Regular</small>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="card card-sm">
+											<div class="card-body">
+												<div class="d-flex justify-content-between mb-5">
+													<div>
+														<span class="d-block font-15 text-dark font-weight-500">Earnings</span>
+													</div>
+													<div>
+														<span class="badge badge-warning  badge-sm">+60%</span>
+													</div>
+												</div>
+												<div>
+													<span class="d-block display-5 text-dark mb-5">$89M</span>
+													<small class="d-block">$100M Targeted</small>
+												</div>
+											</div>
+										</div>
+									</div>  --}}
+            </div>
             </div>
         </div>
 

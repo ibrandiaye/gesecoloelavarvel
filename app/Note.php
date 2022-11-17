@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Note extends Model
 {
     protected $fillable = [
-        'note','eleve_id','evaluation__id'
+        'note','eleve_id','evaluation_id'
     ];
     public function eleve(){
         return $this->belongsTo(Eleve::class);
     }
-    public function evaluations(){
+    public function evaluation(){
         return $this->belongsTo(Evaluation::class);
     }
 }

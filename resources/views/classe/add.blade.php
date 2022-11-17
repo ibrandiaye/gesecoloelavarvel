@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="col-md-4 mb-10">
                                     <label for="validationCustom01">Année Scolaire</label>
-                                    <select class="form-control select2" name="tutteur_id" required>
+                                    <select class="form-control select2" name="annee_scolaire_id" required>
                                         <option value="">Sélectionner</option>
                                         @foreach($anneeScolaires as $anneeScolaire)
                                             <option value="{{  $anneeScolaire->id }}" {{ old('annee_scolaire_id') == $anneeScolaire->id ? 'Selected' : ''}}>{{  $anneeScolaire->annee }}</option>

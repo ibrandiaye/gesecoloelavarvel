@@ -183,13 +183,13 @@ License: You must have a valid license purchased only from templatemonster to le
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{-- route('logout') --}}"
+                    <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                         <i class="dropdown-icon zmdi zmdi-power"></i><span>Se déconnecter</span>
                     </a>
 
-                    <form id="logout-form" action="{{-- route('logout') --}}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
                 </div>
@@ -440,11 +440,11 @@ License: You must have a valid license purchased only from templatemonster to le
                         </ul>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#planning">
+                        <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#cahier-texte">
                             <span class="feather-icon"><i data-feather="activity"></i></span>
                             <span class="nav-link-text">Cahier de Texte</span>
                         </a>
-                        <ul id="planning" class="nav flex-column collapse collapse-level-1">
+                        <ul id="cahier-texte" class="nav flex-column collapse collapse-level-1">
                             <li class="nav-item">
                                 <ul class="nav flex-column">
                                     <li class="nav-item active">
@@ -452,6 +452,120 @@ License: You must have a valid license purchased only from templatemonster to le
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('cahier-texte.index')}}">Liste</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#semestre">
+                            <span class="feather-icon"><i data-feather="activity"></i></span>
+                            <span class="nav-link-text">Semestre</span>
+                        </a>
+                        <ul id="semestre" class="nav flex-column collapse collapse-level-1">
+                            <li class="nav-item">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="{{route('semestre.create')}}">Ajouter</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('semestre.index')}}">Liste</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#type-evaluation">
+                            <span class="feather-icon"><i data-feather="activity"></i></span>
+                            <span class="nav-link-text">Type Evaluation</span>
+                        </a>
+                        <ul id="type-evaluation" class="nav flex-column collapse collapse-level-1">
+                            <li class="nav-item">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="{{route('type-evaluation.create')}}">Ajouter</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('type-evaluation.index')}}">Liste</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#evaluation">
+                            <span class="feather-icon"><i data-feather="activity"></i></span>
+                            <span class="nav-link-text">Evaluation</span>
+                        </a>
+                        <ul id="evaluation" class="nav flex-column collapse collapse-level-1">
+                            <li class="nav-item">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="{{route('evaluation.create')}}">Ajouter</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('evaluation.index')}}">Liste</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#note">
+                            <span class="feather-icon"><i data-feather="activity"></i></span>
+                            <span class="nav-link-text">Note</span>
+                        </a>
+                        <ul id="note" class="nav flex-column collapse collapse-level-1">
+                            <li class="nav-item">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="{{route('note.create')}}">Ajouter</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('note.index')}}">Liste</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#paiement">
+                            <span class="feather-icon"><i data-feather="activity"></i></span>
+                            <span class="nav-link-text">Paiement</span>
+                        </a>
+                        <ul id="paiement" class="nav flex-column collapse collapse-level-1">
+                            <li class="nav-item">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="{{route('paiement.create')}}">Ajouter</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('paiement.index')}}">Liste</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#user">
+                            <span class="feather-icon"><i data-feather="activity"></i></span>
+                            <span class="nav-link-text">Utilisateur</span>
+                        </a>
+                        <ul id="user" class="nav flex-column collapse collapse-level-1">
+                            <li class="nav-item">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="{{route('user.create')}}">Ajouter</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('user.index')}}">Liste</a>
                                     </li>
 
                                 </ul>
